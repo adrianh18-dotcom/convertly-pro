@@ -16,16 +16,33 @@ const translations = {
     about: 'About',
     faq: 'FAQ',
     
+    // Tool tabs
+    imageConverter: 'Image Converter',
+    imageCompressor: 'Image Compressor',
+    documentConverter: 'Document Converter',
+    
     // Home page
     title: 'Convertly - Professional Image Converter',
     subtitle: 'Convert your images to any format quickly and easily',
     dragDrop: 'Drag & drop your image here or',
+    dragDropDocuments: 'Drag & drop your documents here or',
     browse: 'browse files',
     selectFormat: 'Select output format',
+    selectOutputFormat: 'Select output format',
     convert: 'Convert Image',
+    convertDocument: 'Convert Document',
     converting: 'Converting...',
     download: 'Download Converted Image',
     newConversion: 'Convert Another Image',
+    
+    // Compression
+    compressionQuality: 'Compression Quality',
+    compress: 'Compress Image',
+    compressing: 'Compressing...',
+    compressed: 'Compressed',
+    reduced: 'Reduced by',
+    originalSize: 'Original size',
+    conversionComplete: 'Conversion complete!',
     
     // Usage tracking
     conversionsLeft: 'Free conversions remaining: {count}/10',
@@ -59,7 +76,9 @@ const translations = {
     
     // Errors
     errorUnsupported: 'Unsupported file format',
+    errorUnsupportedDocument: 'Unsupported document format',
     errorSize: 'File too large (max 10MB)',
+    errorSizeDocument: 'File too large (max 50MB)',
     errorGeneric: 'Error processing file',
   },
   pt: {
@@ -68,16 +87,33 @@ const translations = {
     about: 'Sobre',
     faq: 'FAQ',
     
+    // Tool tabs
+    imageConverter: 'Conversor de Imagens',
+    imageCompressor: 'Compressor de Imagens',
+    documentConverter: 'Conversor de Documentos',
+    
     // Home page
     title: 'Convertly - Conversor Profissional de Imagens',
     subtitle: 'Converta suas imagens para qualquer formato de forma rápida e fácil',
     dragDrop: 'Arraste e solte sua imagem aqui ou',
+    dragDropDocuments: 'Arraste e solte seus documentos aqui ou',
     browse: 'procurar arquivos',
     selectFormat: 'Selecione o formato de saída',
+    selectOutputFormat: 'Selecione o formato de saída',
     convert: 'Converter Imagem',
+    convertDocument: 'Converter Documento',
     converting: 'Convertendo...',
     download: 'Baixar Imagem Convertida',
     newConversion: 'Converter Outra Imagem',
+    
+    // Compression
+    compressionQuality: 'Qualidade de Compressão',
+    compress: 'Comprimir Imagem',
+    compressing: 'Comprimindo...',
+    compressed: 'Comprimido',
+    reduced: 'Reduzido em',
+    originalSize: 'Tamanho original',
+    conversionComplete: 'Conversão concluída!',
     
     // Usage tracking
     conversionsLeft: 'Conversões gratuitas restantes: {count}/10',
@@ -111,7 +147,9 @@ const translations = {
     
     // Errors
     errorUnsupported: 'Formato de arquivo não suportado',
+    errorUnsupportedDocument: 'Formato de documento não suportado',
     errorSize: 'Arquivo muito grande (máx 10MB)',
+    errorSizeDocument: 'Arquivo muito grande (máx 50MB)',
     errorGeneric: 'Erro ao processar arquivo',
   }
 };

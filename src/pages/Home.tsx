@@ -1,11 +1,14 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useConversions } from '../hooks/useConversions';
 import Header from '../components/Header';
 import ImageConverter from '../components/ImageConverter';
+import ImageCompressor from '../components/ImageCompressor';
+import DocumentConverter from '../components/DocumentConverter';
 import AdModal from '../components/AdModal';
 import AdSenseAd from '../components/AdSenseAd';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const Home = () => {
   const { t } = useLanguage();
@@ -38,8 +41,26 @@ const Home = () => {
           </p>
         </div>
 
-        {/* Converter */}
-        <ImageConverter />
+        {/* Tools Tabs */}
+        <Tabs defaultValue="converter" className="w-full">
+          <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsTrigger value="converter">{t('imageConverter')}</TabsTrigger>
+            <TabsTrigger value="compressor">{t('imageCompressor')}</TabsTrigger>
+            <TabsTrigger value="documents">{t('documentConverter')}</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="converter">
+            <ImageConverter />
+          </TabsContent>
+          
+          <TabsContent value="compressor">
+            <ImageCompressor />
+          </TabsContent>
+          
+          <TabsContent value="documents">
+            <DocumentConverter />
+          </TabsContent>
+        </Tabs>
         
         {/* Bottom Ad */}
         <div className="mt-12 flex justify-center">
