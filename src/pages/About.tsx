@@ -2,6 +2,7 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import Header from '../components/Header';
+import AdSenseAd from '../components/AdSenseAd';
 import { Shield, Zap, Smartphone, Heart, Globe, Clock } from 'lucide-react';
 
 const About = () => {
@@ -35,6 +36,15 @@ const About = () => {
       <Header />
       
       <main className="max-w-4xl mx-auto px-4 py-12">
+        {/* Top Ad */}
+        <div className="flex justify-center mb-8">
+          <AdSenseAd 
+            adSlot="1111111111"
+            adFormat="banner"
+            style={{ display: 'block', width: '728px', height: '90px' }}
+          />
+        </div>
+        
         <div className="bg-white rounded-lg shadow-sm border p-8 md:p-12">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             {t('aboutTitle')}
@@ -73,6 +83,15 @@ const About = () => {
               Your images are never uploaded to our servers, ensuring complete privacy and security.
             </p>
           </div>
+        </div>
+        
+        {/* Bottom Ad */}
+        <div className="flex justify-center mt-8">
+          <AdSenseAd 
+            adSlot="2222222222"
+            adFormat="rectangle"
+            style={{ display: 'block', width: '336px', height: '280px' }}
+          />
         </div>
       </main>
     </div>

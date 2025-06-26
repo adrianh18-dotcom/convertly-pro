@@ -2,6 +2,7 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import Header from '../components/Header';
+import AdSenseAd from '../components/AdSenseAd';
 import { ChevronDown } from 'lucide-react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
@@ -32,6 +33,15 @@ const FAQ = () => {
       <Header />
       
       <main className="max-w-4xl mx-auto px-4 py-12">
+        {/* Top Ad */}
+        <div className="flex justify-center mb-8">
+          <AdSenseAd 
+            adSlot="3333333333"
+            adFormat="banner"
+            style={{ display: 'block', width: '728px', height: '90px' }}
+          />
+        </div>
+        
         <div className="bg-white rounded-lg shadow-sm border p-8 md:p-12">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
             {t('faqTitle')}
@@ -62,6 +72,15 @@ const FAQ = () => {
               We're here to help you with all your image conversion needs!
             </p>
           </div>
+        </div>
+        
+        {/* Bottom Ad */}
+        <div className="flex justify-center mt-8">
+          <AdSenseAd 
+            adSlot="4444444444"
+            adFormat="rectangle"
+            style={{ display: 'block', width: '336px', height: '280px' }}
+          />
         </div>
       </main>
     </div>
