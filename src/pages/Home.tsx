@@ -15,7 +15,7 @@ const Home = () => {
   const { showAdModal, closeAdModal, resetConversions } = useConversions();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8">
       <Header />
       
       {/* Top Banner Ad */}
@@ -25,18 +25,18 @@ const Home = () => {
             adSlot="1234567890"
             adFormat="banner"
             className="mb-4"
-            style={{ display: 'block', width: '728px', height: '90px' }}
+            style={{ display: "block", width: "100%", height: "auto", maxWidth: "728px" }}
           />
         </div>
       </div>
       
-      <main className="max-w-6xl mx-auto px-4 py-12">
+      <main className="w-full max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t('title')}
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto">
             {t('subtitle')}
           </p>
         </div>
