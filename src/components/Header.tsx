@@ -1,22 +1,23 @@
 
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useI18n } from '../contexts/I18nContext';
 import { Link, useLocation } from 'react-router-dom';
 import { Globe } from 'lucide-react';
+import { languages, SupportedLanguage } from '../lib/i18n';
 
 const Header = () => {
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage, t } = useI18n();
   const location = useLocation();
 
   return (
-    <header className="bg-white shadow-sm border-b">
+    <header className="bg-background shadow-sm border-b border-border">
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">C</span>
+            <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-lg flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-sm">C</span>
             </div>
-            <span className="text-2xl font-bold text-gray-900">Convertly</span>
+            <span className="text-2xl font-bold text-foreground">Convertly</span>
           </Link>
           
           <nav className="hidden md:flex space-x-8">
@@ -24,8 +25,8 @@ const Header = () => {
               to="/" 
               className={`text-sm font-medium transition-colors ${
                 location.pathname === '/' 
-                  ? 'text-blue-600' 
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'text-primary' 
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               {t('home')}
@@ -34,8 +35,8 @@ const Header = () => {
               to="/about" 
               className={`text-sm font-medium transition-colors ${
                 location.pathname === '/about' 
-                  ? 'text-blue-600' 
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'text-primary' 
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               {t('about')}
@@ -44,8 +45,8 @@ const Header = () => {
               to="/faq" 
               className={`text-sm font-medium transition-colors ${
                 location.pathname === '/faq' 
-                  ? 'text-blue-600' 
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'text-primary' 
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               {t('faq')}
@@ -53,14 +54,17 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-2">
-            <Globe className="w-4 h-4 text-gray-500" />
+            <Globe className="w-4 h-4 text-muted-foreground" />
             <select
               value={language}
-              onChange={(e) => setLanguage(e.target.value as 'en' | 'pt')}
-              className="text-sm border-none bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-2 py-1"
+              onChange={(e) => setLanguage(e.target.value as SupportedLanguage)}
+              className="text-sm border-none bg-transparent focus:outline-none focus:ring-2 focus:ring-primary rounded px-2 py-1"
             >
-              <option value="en">EN</option>
-              <option value="pt">PT</option>
+              {Object.entries(languages).map(([code, name]) => (
+                <option key={code} value={code}>
+                  {name}
+                </option>
+              ))}
             </select>
           </div>
         </div>
@@ -71,8 +75,8 @@ const Header = () => {
             to="/" 
             className={`text-sm font-medium transition-colors ${
               location.pathname === '/' 
-                ? 'text-blue-600' 
-                : 'text-gray-600 hover:text-gray-900'
+                ? 'text-primary' 
+                : 'text-muted-foreground hover:text-foreground'
             }`}
           >
             {t('home')}
@@ -81,8 +85,8 @@ const Header = () => {
             to="/about" 
             className={`text-sm font-medium transition-colors ${
               location.pathname === '/about' 
-                ? 'text-blue-600' 
-                : 'text-gray-600 hover:text-gray-900'
+                ? 'text-primary' 
+                : 'text-muted-foreground hover:text-foreground'
             }`}
           >
             {t('about')}
@@ -91,8 +95,8 @@ const Header = () => {
             to="/faq" 
             className={`text-sm font-medium transition-colors ${
               location.pathname === '/faq' 
-                ? 'text-blue-600' 
-                : 'text-gray-600 hover:text-gray-900'
+                ? 'text-primary' 
+                : 'text-muted-foreground hover:text-foreground'
             }`}
           >
             {t('faq')}
